@@ -51,7 +51,7 @@ def ajax_build_graph_view(request, graph_id):
 		G = nx.gnp_random_graph(size,0.1)
 	else:
 		G = nx.scale_free_graph(size)
-	vega_graph = build_vega_graph(G)
+	vega_graph = build_vega_graph(G,viewport=[500,500])
 	return HttpResponse(vega_graph, mimetype="text/javascript")
 
 

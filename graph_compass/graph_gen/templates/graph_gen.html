@@ -16,6 +16,7 @@
 {% endblock %}
 
 {% block content %}
+<h3>My generated graphs</h3>
 {% if graphs %}
     <ul>
         {% for graph in graphs %}
@@ -24,8 +25,12 @@
             </li>
         {% endfor %}
     </ul>
+{% else %}
+    <ul>
+        <li>no graphs in database</li>
+    </ul>
 {% endif %}
 <a href="{% url 'store_graph' %}">
-    <button class="btn">new graph</button>
+    <button class="btn btn-primary">new graph</button>
 </a>
 {% endblock %}

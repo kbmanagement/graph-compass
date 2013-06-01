@@ -1,8 +1,10 @@
 {% extends 'graph_gen.html' %}
 {% load staticfiles %}
 {% block content %}
-{{ graph }}
-<button class="btn" id="build-vega">build vega</button>
+<h3>{{ graph.name }}</h3>
+<h5>type: {{ graph.graph_type }}</h5>
+<h5>size: {{ graph.size }}</h5>
+<button class="btn btn-primary" id="build-vega">build vega</button>
 <div id="vis"></div>
 {% endblock %}
 {% block scripts %}

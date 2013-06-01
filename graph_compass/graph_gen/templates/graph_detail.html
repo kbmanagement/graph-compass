@@ -1,0 +1,35 @@
+{% extends 'graph_gen.html' %}
+{% load staticfiles %}
+{% block content %}
+{{ graph }}
+<button class="btn" id="build-vega">build vega</button>
+<div id="vis"></div>
+{% endblock %}
+{% block scripts %}
+<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+<script src="http://trifacta.github.com/vega/d3.v3.min.js"></script>
+<script src="http://trifacta.github.com/vega/vega.js"></script>
+<script src="http://trifacta.github.com/vega/d3.geo.projection.min.js"></script>
+<script type="text/javascript">
+(function ($){
+
+    function parse(data) {
+        vg.parse.spec(data, function(chart) { chart({el:"#vis"}).update (); 
+        });
+    };
+    
+    function load_data(data) {
+        $.getJSON('/generator/build/{{graph.id}}/ajax/', parse);
+    }
+
+    function init() {
+    $("#build-vega").on("click", load_data);
+        console.log($("build-vega"));
+    };
+    
+    $(document).ready(init);
+
+})(jQuery);
+</script>
+{% endblock %}
+

@@ -10,6 +10,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container-fluid">
+        {% block navbar %}
             <a class="brand" href="{% url 'home' %}">graph_compass</a>
 			<ul class="nav" >
 				<li>
@@ -17,10 +18,14 @@
                 </li>
                 <li>
                     <a href="/logout/">logout</a>
-
+                </li>
+                <li>
+                    <a href="{% url 'graph_gen_home' %}">generate</a>
                 </li>
 			</ul>
+         {% endblock %}
         </div>
+    
     </div>
 </div>
 <div class="container-fluid">
@@ -34,8 +39,8 @@
 
 </div>
 </div>
-
+{% block scripts %}
 <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-
+{% endblock %}
 </body>
 </html>

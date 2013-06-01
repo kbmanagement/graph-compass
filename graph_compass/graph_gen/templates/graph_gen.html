@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+    <a class="brand" href="{% url 'graph_gen_home' %}">graph_gen</a>
+	    <ul class="nav" >
+			<li>
+                <a href="/admin/">admin</a>
+            </li>
+            <li>
+                <a href="/logout/">logout</a>
+            </li>
+            <li>
+                <a href="{% url 'home' %}">compass</a>
+            </li>
+        </ul>
+{% endblock %}
+
+{% block content %}
+{% if graphs %}
+    <ul>
+        {% for graph in graphs %}
+            <li>
+                {{ graph }}<a href="{% url 'graph_detail' graph.id %}">  detail</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<a href="{% url 'store_graph' %}">
+    <button class="btn">new graph</button>
+</a>
+{% endblock %}

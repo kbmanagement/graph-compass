@@ -35,12 +35,14 @@ def store_graph_view(request):
         'graph_form': graph_form,
 	}))
 
+@login_required
 def graph_detail_view(request, graph_id):
 	graph = get_object_or_404(Graph, id=graph_id)
 	return render_to_response('graph_detail.html', RequestContext(request, {
         'graph': graph,
 	}))
 
+@login_required
 def ajax_build_graph_view(request, graph_id):
 	graph = get_object_or_404(Graph, id=graph_id)
 	size = graph.size
@@ -50,8 +52,6 @@ def ajax_build_graph_view(request, graph_id):
 	else:
 		G = nx.scale_free_graph(size)
 	vega_graph = build_vega_graph(G)
-
-
 	return HttpResponse(vega_graph, mimetype="text/javascript")
 
 

@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<head>
+<title>Create </title>
+<link href="{% static 'bootstrap/css/bootstrap.css' %}" type = "text/css" rel="stylesheet"/>
+<link href="{% static 'bootstrap/css/bootstrap-responsive.css' %}" type ="text/css" rel="stylesheet"/>
+<link href="{% static 'css/base.css' %}" type ="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="{% url 'home' %}">graph_compass</a>
+			<ul class="nav" >
+				<li>
+                    <a href="/admin/">admin</a>
+                </li>
+
+                </li>
+			</ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+
+<div class="span12">
+{% block content %}
+
+{% endblock %}
+</div>
+
+</div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+
+</body>
+</html>

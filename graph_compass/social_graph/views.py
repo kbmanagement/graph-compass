@@ -5,6 +5,6 @@ from django.shortcuts import (
 )
 
 
-
+@login_required
 def home_view(request):
     return HttpResponse('hello')

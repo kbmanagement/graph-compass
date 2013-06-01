@@ -1,11 +1,18 @@
 {% extends 'graph_gen.html' %}
 {% load staticfiles %}
 {% block content %}
-<h3>{{ graph.name }}</h3>
-<h5>type: {{ graph.graph_type }}</h5>
-<h5>size: {{ graph.size }}</h5>
-<button class="btn btn-primary" id="build-vega">build vega</button>
-<div id="vis"></div>
+<div class="row-fluid">
+
+<div class="span5"
+    <h3>{{ graph.name }}</h3>
+    <h5>type: {{ graph.graph_type }}</h5>
+    <h5>size: {{ graph.size }}</h5>
+    <button class="btn btn-primary" id="build-vega">build vega</button>
+</div>
+
+<div class="span7"id="vis"></div>
+
+</div>
 {% endblock %}
 {% block scripts %}
 <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>

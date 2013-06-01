@@ -27,12 +27,12 @@
         });
     };
     
-    function load_data(data) {
+    function loadData(data) {
         $.getJSON('/generator/build/{{graph.id}}/ajax/', parse);
     }
 
     function init() {
-    $("#build-vega").on("click", load_data);
+    $("#build-vega").on("click", loadData);
         console.log($("build-vega"));
     };
     

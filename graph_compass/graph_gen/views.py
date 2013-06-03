@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 import networkx as nx
 from sonnet import build_vega_graph

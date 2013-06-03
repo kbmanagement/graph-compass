@@ -5,8 +5,11 @@
 <link href="{% static 'bootstrap/css/bootstrap.css' %}" type = "text/css" rel="stylesheet"/>
 <link href="{% static 'bootstrap/css/bootstrap-responsive.css' %}" type ="text/css" rel="stylesheet"/>
 <link href="{% static 'css/base.css' %}" type ="text/css" rel="stylesheet"/>
+<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 </head>
 <body>
+<div id="fb-root"></div>
+<div id="fb-root"></div>
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container-fluid">
@@ -33,14 +36,11 @@
 
 <div class="span10 offset1">
 {% block content %}
-
 {% endblock %}
 </div>
-
 </div>
 </div>
 {% block scripts %}
-<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 {% endblock %}
 </body>
 </html>

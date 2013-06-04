@@ -5,6 +5,8 @@ from django.shortcuts import (
 )
 
 
+
+
 @login_required
 def home_view(request):
     return render_to_response('index.html', RequestContext(request, {}))
